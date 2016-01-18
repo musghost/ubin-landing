@@ -1,0 +1,445 @@
+$icon-font-path: "../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
+
+// bower:scss
+@import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+// endbower
+
+@import "fonts";
+
+header {
+  border-bottom: 3px solid #a5acb0;
+}
+
+.navbar {
+  min-height: 60px;
+  font-family: 'Casper';
+  margin-bottom: 0;
+}
+
+.navbar-default {
+  background: #F0F0F0;
+  border: 0;
+  border-radius: 0;
+  font-size: 15px;
+
+  .navbar-nav {
+    & > li {
+      & > a {
+        color: #213741;
+        padding-top: 19px;
+        padding-bottom: 19px;
+      }
+    }
+  }
+}
+
+.navbar-brand {
+  padding: 10px 15px;
+  img {
+    max-width: 120px;
+  }
+}
+
+#main {
+  position: relative;
+  padding: 120px 0 80px;
+  font-family: 'Casper';
+  background: {
+    image: url('../images/background.png');
+    position: top right;
+    repeat: no-repeat;
+  }
+
+  .logo {
+    margin-bottom: 40px;
+  }
+
+  .layer-up {
+    z-index: 1;
+  }
+
+  .links {
+    text-align: center;
+    margin-top: 55px;
+    margin-bottom: 70px;
+    a {
+      display: inline-block;
+      width: 165px;
+      height: 50px;
+      background: {
+        image: url(../images/appstore.png);
+        repeat: no-repeat;
+        color: #1084BE;
+        position: 8px 4px;
+      }
+      border-radius: 4px;
+    }
+    .play {
+      background: {
+        image: url(../images/gplay.png);
+      }
+      margin-left: 30px;
+    }
+  }
+
+  .download {
+    display: inline-block;
+    z-index: 3;
+    color: #fff;
+    font-size: 17px;
+  }
+
+  .phone-image {
+    margin-bottom: -20px;
+  }
+
+  h3 {
+    margin-bottom: 0;
+    font-size: 20px;
+  }
+
+  h1 {
+    margin-top: 10px;
+    font-size: 40px;
+  }
+
+  &:before {
+    position: absolute;
+    content: '';
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #213741;
+    height: 270px;
+    z-index: 1;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  @media screen and (max-width: $screen-sm-max) {
+    h1 {
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+
+    .links {
+      margin-bottom: 60px;
+
+      .play {
+        margin-left: 0;
+      }
+    }
+    &:before {
+      position: absolute;
+      content: '';
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #213741;
+      height: 200px;
+      z-index: 1;
+    }
+  }
+  @media screen and (max-width: $screen-xs-max) {
+    &:before {
+      display: none;
+    }
+    .phone-image {
+      display: none;
+    }
+
+    .download {
+      color: #213741;
+    }
+  }
+}
+
+#about {
+  padding: 100px 0;
+  font-family: 'Casper';
+  position: relative;
+  background: #F0F0F0;
+
+  h1 {
+    color: #1084BE;
+    padding-bottom: 40px;
+    position: relative;
+    margin-top: 60px;
+
+    &:after {
+      position: absolute;
+      height: 4px;
+      content: '';
+      background: #1084BE;
+      bottom: 0;
+      left: 0;
+      width: 100px;
+    }
+  }
+
+  p.about {
+    line-height: 35px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-size: 16px;
+  }
+
+  .lens {
+    height: 100px;
+    width: 100%;
+    padding-left: 100px;
+    position: relative;
+
+    p {
+      z-index: 2;
+      position: relative;
+      color: #1084BE;
+      line-height: 65px;
+      font-size: 15px;
+    }
+
+    &:before {
+      position: absolute;
+      width: 88px;
+      height: 88px;
+      content: '';
+      background: {
+        image: url('../images/lens.png');
+      }
+      left: 0;
+      top: 0;
+      z-index: 2;
+    }
+
+    &:after {
+      content: '';
+      height: 65px;
+      left: 35px;
+      top: 0;
+      right: 0;
+      background: #e7f2f8;
+      position: absolute;
+      border-radius: 0 62px 62px 0;
+    }
+  }
+
+  p.description {
+    padding-left: 100px;
+    margin-top: 40px;
+    line-height: 30px;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  .lens-out {
+    display: none;
+  }
+
+  &:after {
+    position: absolute;
+    width: 229px;
+    height: 393px;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    content: '';
+    background: {
+      image: url(../images/iphone1.png);
+      repeat: no-repeat;
+    }
+  }
+
+  @media screen and (max-width: $screen-sm-max) {
+    p.description {
+      padding-left: 0;
+    }
+
+    .lens {
+      display: none;
+    }
+
+    .lens-out {
+      display: block;
+    }
+
+    &:after {
+      display: none;
+    }
+  }
+  @media screen and (max-width: $screen-xs) {
+    .lens-out {
+      display: none;
+    }
+  }
+}
+
+#tools {
+  font-family: 'Casper';
+  padding: 50px 0 100px;
+  color: #1084BE;
+
+  .row {
+    background: {
+      image: url(../images/iphone2.png);
+      position: 50% top;
+      repeat: no-repeat;
+    }
+    padding: 50px;
+  }
+
+  h1 {
+    padding-bottom: 40px;
+    position: relative;
+    margin-top: 110px;
+    text-align: center;
+    padding-bottom: 30px;
+    margin-bottom: 50px;
+
+    &:after {
+      position: absolute;
+      height: 4px;
+      content: '';
+      background: #1084BE;
+      bottom: 0;
+      left: 50%;
+      width: 100px;
+      transform: translateX(-50%);
+    }
+  }
+
+  .icon-ubin {
+    width: 30px;
+    height: 34px;
+    display: inline-block;
+    background: {
+      image: url(../images/sprite.png);
+      repeat: no-repeat;
+    }
+
+    &.icon-calc {
+      background-position: 2px 0;
+    }
+    &.icon-clock {
+      background-position: 0 -34px;
+    }
+    &.icon-cal {
+      background-position: 0 -68px;
+    }
+    &.icon-docs {
+      background-position: 0 -102px;
+    }
+    &.icon-tasks {
+      background-position: 0 -136px;
+    }
+    &.icon-client {
+      background-position: 0 -170px;
+    }
+  }
+
+  .elem {
+    text-align: center;
+
+    span {
+      display: block;
+    }
+  }
+
+  .unorder-list {
+    color: #213741;
+    text-align: center;
+    list-style: none;
+
+    .list-item {
+      font-size: 12px;
+
+      span {
+        position: relative;
+        display: inline-block;
+        line-height: 25px;
+
+        &:before {
+          position: absolute;
+          content: '';
+          left: -10px;
+          top: 50%;
+          transform: translateY(-50%);
+          height: 3px;
+          width: 3px;
+          border-radius: 50%;
+          background: #213741;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: $screen-xs-max) {
+    .row {
+      background: none;
+    }
+
+    .elem {
+      margin: 15px 0;
+    }
+  }
+}
+
+footer {
+  background: #213741;
+  color: #fff;
+  font-family: 'Casper';
+
+  h1 {
+    position: relative;
+    margin-top: 50px;
+    padding-bottom: 10px;
+    margin-bottom: 50px;
+
+    &:after {
+      position: absolute;
+      height: 4px;
+      content: '';
+      background: #fff;
+      bottom: 0;
+      left: 0;
+      width: 100px;
+    }
+  }
+
+  input {
+    width: 100%;
+    margin-bottom: 20px;
+    background: none;
+    border-radius: 4px;
+    border: 2px solid #fff;
+    height: 45px;
+    line-height: 45px;
+    padding: 0 15px;
+  }
+
+  textarea {
+    height: 110px;
+    width: 100%;
+    background: none;
+    border: 2px solid #fff;
+    border-radius: 4px;
+    padding: 15px;
+  }
+
+  button {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #1084BE;
+    border: 0;
+    text-transform: uppercase;
+  }
+
+  .end {
+    background: #1084BE;
+    height: 30px;
+    margin-top: 30px;
+  }
+}
