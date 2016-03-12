@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="shortcut icon" href="/favicon.png">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
@@ -48,6 +48,57 @@
       </nav>
     </header>
 
+    <div class="curtain"></div>
+    <div class="floating-form">
+      <div class="container">
+        <div class="text-right"><a href="#" class="close-curtain">X</a></div>
+        <div class="row">
+          <div class="col-sm-4 col-sm-offset-2">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Correo electrónico">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Nombre de usuario">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Contraseña">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Confirmar contraseña">
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="form-group">
+              <select class="form-control" id="typeAssessor">
+                <option value="">Tipo de ascesor</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Nombre inmobiliaria">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Celular">
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <input type="text" class="form-control" placeholder="Fecha Nac.">
+              </div>
+              <div class="col-sm-6">
+                <select class="form-control">
+                  <option>Género</option>
+                  <option value="Hombre">Hombre</option>
+                  <option value="Mujer">Mujer</option>
+                </select>
+              </div>
+            </div>
+            <div class="text-right">
+              <button>Registrarse</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <section id="main">
       <div class="container">
         <div class="row">
@@ -62,7 +113,19 @@
                 <a href="#" class="app"></a>
                 <a href="#" class="play"></a>
               </div>
-              <a href="#" class="download">Descárgala ahora</a>
+              <form id="login">
+                <input type="hidden" name="device_os" value="web">
+                <div class="form-group">
+                  <input type="email" placeholder="E-mail" class="form-control" name="email">
+                </div>
+                <div class="form-group">
+                  <input type="password" placeholder="Contraseña" class="form-control" name="password">
+                </div>
+                <div>
+                  <button class="btn btn-link" type="button" id="register">¿No tienes cuenta? Regístrate</button>
+                </div>
+                <button type="submit" class="btn btn-primary">Ingresar</button>
+              </form>
             </div>
           </div>
           <div class="col-sm-6 layer-up">
@@ -106,7 +169,7 @@
               <p>Calcula cuotas mensuales y obtén el cuadro de amortización de la hipoteca que buscas</p>
             </div>
             <div class="elem">
-              <i class="icon-ubin icon-clock"></i>
+              <i class="icon-ubin icon-supplier"></i>
               <span>Proveedores</span>
               <p>Encuentra en nuestra sección perfiles que agilicen tus transacciones; Notarios, Brokers, Peritos etc...</p>
             </div>
@@ -148,14 +211,14 @@
       <div class="container">
         <h1>Contacto:</h1>
         <div class="row">
-          <div class="col-sm-4">
+          <div class="col-sm-5">
             <input type="text" placeholder="Correo electrónico">
             <input type="text" placeholder="Nombre">
           </div>
-          <div class="col-sm-5">
+          <div class="col-sm-6">
             <textarea placeholder="Mensaje"></textarea>
           </div>
-          <div class="col-sm-3">
+          <div class="col-sm-1">
             <button>Enviar</button>
           </div>
         </div>

@@ -8,10 +8,15 @@ $icon-font-path: "../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
 
 header {
   border-bottom: 3px solid #a5acb0;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: 3;
 }
 
 .navbar {
-  min-height: 60px;
+  min-height: 45px;
   font-family: 'Casper';
   margin-bottom: 0;
 }
@@ -26,8 +31,8 @@ header {
     & > li {
       & > a {
         color: #213741;
-        padding-top: 19px;
-        padding-bottom: 19px;
+        padding-top: 15px;
+        padding-bottom: 14px;
       }
     }
   }
@@ -36,7 +41,51 @@ header {
 .navbar-brand {
   padding: 10px 15px;
   img {
-    max-width: 120px;
+    max-width: 95px;
+  }
+}
+
+.curtain {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background: #1084BE;
+  z-index: 3;
+  opacity: .8;
+  display: none;
+}
+
+.floating-form {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 4;
+  display: none;
+
+  input, select {
+    border-radius: 15px;
+    color: #1084BE;
+    font-size: 11px;
+
+    &::placeholder {
+      color: #1084BE;
+    }
+  }
+
+  button {
+    margin-top: 20px;
+    border-radius: 15px;
+    border: 0;
+    padding: 10px 50px;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: #fff;
+    background: #213741;
   }
 }
 
@@ -44,6 +93,7 @@ header {
   position: relative;
   padding: 120px 0 80px;
   font-family: 'Casper';
+  margin-top: 63px;
   background: {
     image: url('../images/background.png');
     position: top right;
@@ -60,7 +110,7 @@ header {
 
   .links {
     text-align: center;
-    margin-top: 55px;
+    margin-top: 10px;
     margin-bottom: 70px;
     a {
       display: inline-block;
@@ -70,7 +120,8 @@ header {
         image: url(../images/appstore.png);
         repeat: no-repeat;
         color: #1084BE;
-        position: 8px 4px;
+        position: 0 0;
+        size: cover;
       }
       border-radius: 4px;
     }
@@ -79,6 +130,32 @@ header {
         image: url(../images/gplay.png);
       }
       margin-left: 30px;
+    }
+  }
+
+  form {
+    margin: 0 auto;
+    width: 70%;
+
+    input {
+      border-radius: 15px;
+      color: #1084BE;
+
+      &::placeholder {
+        color: #1084BE;
+      }
+    }
+
+    .btn-link {
+      color: #fff;
+    }
+
+    .btn-primary {
+      border-radius: 20px;
+      background: #1084BE;
+      text-transform: uppercase;
+      font-size: 11px;
+      padding: 10px 40px;
     }
   }
 
@@ -91,6 +168,10 @@ header {
 
   .phone-image {
     margin-bottom: -20px;
+
+    img {
+      max-width: 100%;
+    }
   }
 
   h3 {
@@ -115,7 +196,7 @@ header {
   }
 
   img {
-    max-width: 100%;
+    max-width: 170px;
   }
 
   @media screen and (max-width: $screen-sm-max) {
@@ -207,6 +288,7 @@ header {
       content: '';
       background: {
         image: url('../images/lens.png');
+        size: cover;
       }
       left: 0;
       top: 0;
@@ -323,7 +405,7 @@ header {
     &.icon-calc {
       background-position: 2px 0;
     }
-    &.icon-clock {
+    &.icon-task {
       background-position: 0 -34px;
     }
     &.icon-cal {
@@ -332,7 +414,7 @@ header {
     &.icon-docs {
       background-position: 0 -102px;
     }
-    &.icon-tasks {
+    &.icon-supplier {
       background-position: 0 -136px;
     }
     &.icon-client {
