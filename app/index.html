@@ -17,6 +17,7 @@
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
   </head>
   <body>
 
@@ -49,55 +50,63 @@
     </header>
 
     <div class="curtain"></div>
-    <div class="floating-form">
+    <form class="floating-form" id="createUser">
       <div class="container">
-        <div class="text-right"><a href="#" class="close-curtain">X</a></div>
+        <div class="row">
+          <div class="col-sm-4 col-sm-offset-2">
+          </div>
+          <div class="col-sm-4">
+            <div class="text-right"><a href="#" class="close-curtain">X</a></div>
+          </div>
+        </div>
         <div class="row">
           <div class="col-sm-4 col-sm-offset-2">
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Correo electrónico">
+              <input type="text" class="form-control" placeholder="Correo electrónico" name="email" required>
             </div>
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Nombre de usuario">
+              <input type="text" class="form-control" placeholder="Nombre de usuario" name="name" required>
             </div>
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Contraseña">
+              <input type="password" class="form-control" placeholder="Contraseña" name="password" required>
             </div>
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Confirmar contraseña">
+              <input type="password" class="form-control" placeholder="Confirmar contraseña" name="confirm_password" required>
             </div>
           </div>
           <div class="col-sm-4">
-            <div class="form-group">
-              <select class="form-control" id="typeAssessor">
+            <div class="form-group select-rounded">
+              <select class="form-control" id="typeAssessor" name="type_advisor">
                 <option value="">Tipo de ascesor</option>
               </select>
             </div>
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Nombre inmobiliaria">
+              <input type="text" class="form-control" placeholder="Nombre inmobiliaria" name="property_company_name">
             </div>
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Celular">
+              <input type="text" class="form-control" placeholder="Celular" name="phone" required>
             </div>
             <div class="row">
               <div class="col-sm-6">
-                <input type="text" class="form-control" placeholder="Fecha Nac.">
+                <input type="text" class="form-control" placeholder="Fecha Nac." id="datepicker" name="birthday">
               </div>
               <div class="col-sm-6">
-                <select class="form-control">
-                  <option>Género</option>
-                  <option value="Hombre">Hombre</option>
-                  <option value="Mujer">Mujer</option>
-                </select>
+                <div class="select-rounded form-group">
+                  <select class="form-control" name="gender">
+                    <option>Género</option>
+                    <option value="Hombre">Hombre</option>
+                    <option value="Mujer">Mujer</option>
+                  </select>
+                </div>
               </div>
             </div>
             <div class="text-right">
-              <button>Registrarse</button>
+              <button type="submit">Registrarse</button>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </form>
 
     <section id="main">
       <div class="container">
@@ -230,6 +239,7 @@
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/jquery-ui/jquery-ui.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 

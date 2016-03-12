@@ -27,6 +27,8 @@ $('.close-curtain').click(function(e){
 
 $('#login').submit(function(e){
   e.preventDefault();
+  var form = $(this);
+  var button = form.find('button[type=submit]').first();
   $.ajax({
     method: 'POST',
     url: host + 'api-token-auth/',
@@ -39,7 +41,80 @@ $('#login').submit(function(e){
       window.location.href = web + send
     },
     error: function() {
-
+      button.popover({
+        animation: true,
+        content: 'El correo o contraseña proporcionados son incorrectos.',
+        placement: 'bottom'
+      });
+      button.popover('show');
+      setTimeout(function() {
+        button.popover('destroy')
+      }, 5000);
     }
   });
+});
+
+$('#createUser').submit(function(e) {
+  e.preventDefault();
+  var form = $(this);
+  var button = form.find('button[type=submit]').first();
+  var passwords = form.find('[type=password]');
+
+  if (passwords.eq(0).val() !== passwords.eq(1).val()) {
+    button.popover({
+      animation: true,
+      content: 'Las contraseñas que proporcionó deben coincidir.',
+      placement: 'bottom'
+    });
+    button.popover('show');
+    setTimeout(function() {
+      button.popover('destroy')
+    }, 5000);
+    return;
+  }
+
+  $.ajax({
+    method: 'POST',
+    url: host + 'register/',
+    data: form.serialize(),
+    success: function (user) {
+      var credentials = {
+        email: user.email,
+        password: form.find('[name=password]').first().val(),
+        device_os: 'web'
+      };
+      $.ajax({
+        method: 'POST',
+        url: host + 'api-token-auth/',
+        data: $.param(credentials),
+        success: function(data) {
+          var send = '?token=' + data.token +
+            '&id=' + data.user.id +
+            '&name=' + data.user.name;
+          window.location.href = web + send
+        },
+        error: function() {
+
+        }
+      });
+    },
+    error: function(error) {
+      if (error.responseJSON.email) {
+        button.popover({
+          animation: true,
+          content: 'El nombre de correo que desea registrar ya existe.',
+          placement: 'bottom'
+        });
+        button.popover('show');
+        setTimeout(function() {
+          button.popover('destroy')
+        }, 5000);
+        return;
+      }
+    }
+  });
+});
+
+$('#datepicker').datepicker({
+  dateFormat: 'yy-mm-dd'
 });

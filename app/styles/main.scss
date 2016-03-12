@@ -76,6 +76,11 @@ header {
     }
   }
 
+  .select-rounded {
+    border-radius: 15px;
+    overflow: hidden;
+  }
+
   button {
     margin-top: 20px;
     border-radius: 15px;
@@ -86,6 +91,17 @@ header {
     letter-spacing: 1px;
     color: #fff;
     background: #213741;
+  }
+
+  .close-curtain {
+    color: #fff;
+    padding: 20px;
+    display: inline-block;
+    font-size: 20px;
+
+    &:hover {
+      text-decoration: none;
+    }
   }
 }
 
