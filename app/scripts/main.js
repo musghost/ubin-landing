@@ -1,5 +1,4 @@
 var host = "http://45.55.170.108/api/v1/";
-//var web = "http://localhost:3000/#/token";
 var web = "http://ubin.mellow.online/#/token";
 
 $.ajax({
@@ -117,4 +116,38 @@ $('#createUser').submit(function(e) {
 
 $('#datepicker').datepicker({
   dateFormat: 'yy-mm-dd'
+});
+
+$('#recover').click(function(e){
+  e.preventDefault();
+  var button = $(this);
+  button.popover({
+    animation: true,
+    placement: 'top',
+    html: true,
+    title: 'Recuperar contraseña',
+    content: '<form class="recover"><div class="form-group"><input class="form-control" type="text" name="email" placeholder="Correo electrónico"></div><button type="submit" class="btn btn-primary">Recuperar</button></form>'
+  });
+  button.popover('show');
+  $('.recover').submit(function(e){
+    e.preventDefault();
+    var form = $(this);
+    $.ajax({
+      method: 'POST',
+      url: host + 'recoverPassword/',
+      data: form.serialize(),
+      success: function() {
+        form.html('<p>Hemos enviado un correo electrónico a su bandeja para continuar con el proceso de recuperación de contraseña.</p>');
+        setTimeout(function(){
+          button.popover('destroy');
+        }, 5000);
+      },
+      error: function(){
+        form.html('<p>El correo que proporcionó no es válido</p>');
+        setTimeout(function(){
+          button.popover('destroy');
+        }, 5000);
+      }
+    })
+  });
 });
