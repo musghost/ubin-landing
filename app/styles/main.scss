@@ -116,6 +116,13 @@ header {
     repeat: no-repeat;
   }
 
+  #register,
+  #recover {
+    @media screen and (max-width: $screen-sm-min) {
+      color: #337ab7;
+    }
+  }
+
   .logo {
     margin-bottom: 40px;
   }
