@@ -1,5 +1,5 @@
-var host = "http://45.55.170.108/api/v1/";
-var web = "http://ubin.mellow.online/#/token";
+var host = "http://api.ubin.mx/api/v1/";
+var web = "http://web.ubin.mx/#/token";
 
 $.ajax({
   url: host + 'typesAdvisors/',
