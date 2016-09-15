@@ -115,7 +115,10 @@ $('#createUser').submit(function(e) {
 });
 
 $('#datepicker').datepicker({
-  dateFormat: 'yy-mm-dd'
+  dateFormat: 'yy-mm-dd',
+  changeMonth: true,
+  changeYear: true,
+  yearRange: '-80:-17',
 });
 
 $('#recover').click(function(e){
