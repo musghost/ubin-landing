@@ -221,21 +221,21 @@
     </section>
 
     <footer id="contact">
-      <div class="container">
+      <form class="container" id="contactForm">
         <h1>Contacto:</h1>
         <div class="row">
           <div class="col-sm-5">
-            <input type="text" placeholder="Correo electrónico">
-            <input type="text" placeholder="Nombre">
+            <input name="email" type="text" placeholder="Correo electrónico">
+            <input name="name" "text" placeholder="Nombre">
           </div>
           <div class="col-sm-6">
-            <textarea placeholder="Mensaje"></textarea>
+            <textarea name="message" placeholder="Mensaje"></textarea>
           </div>
           <div class="col-sm-1">
-            <button>Enviar</button>
+            <input type="submit" value="Enviar">
           </div>
         </div>
-      </div>
+      </form>
       <div class="end"></div>
     </footer>
 
@@ -419,6 +419,20 @@
       })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
       ga('create', 'UA-58383724-1', 'auto');
       ga('send', 'pageview');
+    </script>
+    <script type="text/javascript">
+    $("#contactForm").submit(function(e) {
+        e.preventDefault();
+        $.ajax({
+        type: "POST",
+        url: "http://45.55.170.108/api/v1/contact-email/",
+        data: $("#contactForm").serialize(),
+        success: function(data){
+          alert("Te contactaremos pronto!");
+        }
+      });
+        window.location.href = '/';
+    });
     </script>
   </body>
 </html>
