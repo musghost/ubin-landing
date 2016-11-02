@@ -1,6 +1,18 @@
 var host = "http://api.ubin.mx/api/v1/";
 var web = "http://web.ubin.mx/#/token";
 
+$("#contactForm").submit(function(e) {
+  e.preventDefault();
+  $.ajax({
+    type: "POST",
+    url: host + "contact-email/",
+    data: $("#contactForm").serialize(),
+    success: function(data){
+      window.location.href = '/';
+    }
+  });
+});
+
 $.ajax({
   url: host + 'typesAdvisors/',
   success: function(data) {

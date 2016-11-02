@@ -412,27 +412,13 @@
     <!-- build:js(.tmp) scripts/main.js -->
     <script src="scripts/main.js"></script>
     <!-- endbuild -->
-    <script src="scripts/app-9e6f4ceaf7.js"></script><script>
+    <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
       })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
       ga('create', 'UA-58383724-1', 'auto');
       ga('send', 'pageview');
-    </script>
-    <script type="text/javascript">
-    $("#contactForm").submit(function(e) {
-        e.preventDefault();
-        $.ajax({
-        type: "POST",
-        url: "http://45.55.170.108/api/v1/contact-email/",
-        data: $("#contactForm").serialize(),
-        success: function(data){
-          alert("Te contactaremos pronto!");
-        }
-      });
-        window.location.href = '/';
-    });
     </script>
   </body>
 </html>
